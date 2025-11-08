@@ -27,7 +27,7 @@ const ContactForm = () => {
     }
 
     // Send to WhatsApp
-    const phone = '573001234567'; // Replace with actual phone
+    const phone = '573217651856'; // Replace with actual phone
     const message = encodeURIComponent(
       `Nuevo mensaje de contacto:\n\nNombre: ${formData.name}\nTeléfono: ${formData.phone}\nMensaje: ${formData.message}`
     );
@@ -77,10 +77,16 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-bold mb-1">Ubicación</h4>
-                    <p className="text-muted-foreground">
-                      Calle Principal #123, Centro<br />
-                      Ciudad, País
-                    </p>
+                    <a
+                      href="https://maps.app.goo.gl/qabdqwHqfm5HNrMJ7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors underline underline-offset-4"
+                      aria-label="Abrir ubicación en Google Maps"
+                    >
+                      CRA 9 bis # 1e48<br />
+                      Alfonso López, Pereira
+                    </a>
                   </div>
                 </div>
 
@@ -91,10 +97,13 @@ const ContactForm = () => {
                   <div>
                     <h4 className="font-bold mb-1">Teléfono</h4>
                     <a
-                      href="tel:+573001234567"
+                      href={`https://wa.me/573217651856?text=${encodeURIComponent('¡Hola! Quiero hacer un pedido.')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label="Escribir por WhatsApp"
                     >
-                      +57 300 123 4567
+                      +57 321 7651856
                     </a>
                   </div>
                 </div>
@@ -106,8 +115,11 @@ const ContactForm = () => {
                   <div>
                     <h4 className="font-bold mb-1">Horarios</h4>
                     <p className="text-muted-foreground">
-                      Lunes a Domingo<br />
-                      10:00 AM - 11:00 PM
+                      Miércoles a Lunes:<br />
+                      7:00 PM – 1:00 AM<br />
+                      Fin de semana (Festivos):<br />
+                      7:00 PM – 2:00 AM<br />
+                      Martes: Cerrado
                     </p>
                   </div>
                 </div>

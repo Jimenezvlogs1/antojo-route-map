@@ -1,11 +1,15 @@
-import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
   const handleClick = () => {
-    const phone = '573001234567'; // Replace with actual phone
-    const message = encodeURIComponent('¡Hola! Quiero hacer un pedido en DONDE EL GORDO');
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    const phone = '573217651856';
+    const message = encodeURIComponent('¡Hola! Quiero hacer un pedido');
+    const url = `https://wa.me/${phone}?text=${message}`;
+    const win = window.open(url, '_blank');
+    if (!win || win.closed || typeof win.closed === 'undefined') {
+      window.location.href = url;
+    }
   };
 
   return (
@@ -14,7 +18,7 @@ const WhatsAppButton = () => {
       className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white shadow-2xl hover:scale-110 transition-all duration-300 animate-pulse"
       aria-label="Contactar por WhatsApp"
     >
-      <MessageCircle size={28} />
+      <FaWhatsapp size={24} />
     </Button>
   );
 };

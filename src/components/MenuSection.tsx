@@ -30,8 +30,8 @@ const MenuSection = () => {
               variant={selectedCategory === category.id ? 'default' : 'outline'}
               className={`font-bold uppercase ${
                 selectedCategory === category.id
-                  ? 'bg-primary text-primary-foreground hover:bg-hover'
-                  : 'border-2 border-border hover:border-primary hover:text-primary'
+                  ? 'bg-primary/80 text-white hover:bg-primary'
+                  : 'border-2 border-border hover:border-primary hover:bg-primary/60 hover:text-black'
               }`}
             >
               {category.icon} {category.name}

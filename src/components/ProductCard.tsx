@@ -13,9 +13,9 @@ const ProductCard = ({ item, index }: ProductCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOrderClick = () => {
-    const phone = '573001234567'; // Replace with actual phone
+    const phone = '573217651856'; // Replace with actual phone
     const message = encodeURIComponent(
-      `¡Hola! Quiero pedir: ${item.name}. ¿Para recoger o domicilio?`
+      `¡Hola! Quiero PIDE: ${item.name}.`
     );
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
@@ -56,13 +56,13 @@ const ProductCard = ({ item, index }: ProductCardProps) => {
               size="sm"
               className="flex-1 bg-primary text-primary-foreground hover:bg-hover font-bold uppercase text-xs"
             >
-              Pide
+              PIDE
             </Button>
             <Button
               onClick={() => setIsModalOpen(true)}
               size="sm"
               variant="outline"
-              className="border-2 border-border hover:border-primary hover:text-primary font-bold uppercase text-xs"
+              className="border-2 border-border text-black hover:bg-primary/60 hover:text-black font-bold uppercase text-xs"
             >
               Ver detalles
             </Button>

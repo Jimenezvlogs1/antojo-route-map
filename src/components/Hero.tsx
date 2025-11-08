@@ -1,11 +1,20 @@
 import { Button } from '@/components/ui/button';
-import { MessageCircle } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Hero = () => {
   const handleWhatsAppClick = () => {
-    const phone = '573001234567'; // Replace with actual phone
+    const phone = '573217651856';
     const message = encodeURIComponent('¡Hola! Quiero hacer un pedido');
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    const urls = [
+      `https://wa.me/${phone}?text=${message}`,
+      `https://api.whatsapp.com/send?phone=${phone}&text=${message}`,
+    ];
+
+    for (const url of urls) {
+      const win = window.open(url, '_blank');
+      if (win && !win.closed) return;
+    }
+    window.location.href = urls[0];
   };
 
   const scrollToMenu = () => {
@@ -25,14 +34,14 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-white animate-fade-up">
-            <div className="inline-block bg-accent text-white px-4 py-2 rounded-full text-sm font-bold mb-6 uppercase">
-              🔥 Comida Tradicional Callejera
-            </div>
-            
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl uppercase tracking-tight mb-6 leading-tight">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl uppercase tracking-tight mb-4 leading-tight">
               DONDE EL{' '}
               <span className="text-primary block">GORDO</span>
             </h1>
+
+            <div className="inline-flex items-center gap-2 bg-transparent text-white px-5 py-2 rounded-full text-sm font-extrabold mt-2 mb-6 uppercase border-2 border-red-500">
+              Comida Tradicional Callejera
+            </div>
             
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-xl">
               Sabor auténtico, porciones generosas y la mejor sazón callejera de la ciudad. 
@@ -51,11 +60,10 @@ const Hero = () => {
               <Button
                 onClick={handleWhatsAppClick}
                 size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-secondary font-bold uppercase tracking-wide text-lg h-14 px-8"
+                className="bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold uppercase tracking-wide text-lg h-14 px-8 inline-flex items-center gap-2"
               >
-                <MessageCircle className="mr-2" size={20} />
-                Escríbenos por WhatsApp
+                <FaWhatsapp size={20} className="mr-1" />
+                Escríbenos a WhatsApp
               </Button>
             </div>
 
@@ -63,15 +71,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20">
               <div>
                 <div className="text-3xl font-display text-primary">100+</div>
-                <div className="text-sm text-white/70 uppercase">Productos</div>
+                <div className="text-sm text-black uppercase">Productos</div>
               </div>
               <div>
                 <div className="text-3xl font-display text-primary">5★</div>
-                <div className="text-sm text-white/70 uppercase">Calificación</div>
+                <div className="text-sm text-black/70 uppercase">Calificación</div>
               </div>
               <div>
-                <div className="text-3xl font-display text-primary">24/7</div>
-                <div className="text-sm text-white/70 uppercase">Disponibles</div>
+                <div className="text-3xl font-display text-primary">6/6</div>
+                <div className="text-sm text-black/70 uppercase">Disponibles</div>
               </div>
             </div>
           </div>
@@ -86,8 +94,8 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h3 className="font-display text-2xl text-white">PERRO ESPECIAL</h3>
-                <p className="text-white/80">¡El favorito de nuestros clientes!</p>
+                <h3 className="font-display text-2xl text-black">PERRO ESPECIAL</h3>
+                <p className="text-black/80">¡El favorito de nuestros clientes!</p>
               </div>
             </div>
             

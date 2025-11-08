@@ -23,8 +23,8 @@ const Header = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    const phone = '573001234567'; // Replace with actual phone
-    const message = encodeURIComponent('¡Hola! Quiero hacer un pedido en DONDE EL GORDO');
+    const phone = '573217651856'; // Replace with actual phone
+    const message = encodeURIComponent('¡Hola! Quiero hacer un pedido.');
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
 
@@ -39,8 +39,8 @@ const Header = () => {
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3 group">
             <div className="text-2xl md:text-3xl font-display tracking-tight">
-              <span className="text-secondary">DONDE EL</span>{' '}
-              <span className="text-primary">GORDO</span>
+              <span className={`${isScrolled ? 'text-foreground' : 'text-white'}`}>DONDE EL</span>{' '}
+              <span className="text-red-600">GORDO</span>
             </div>
           </a>
 
@@ -50,7 +50,7 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className={`${isScrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium`}
               >
                 {link.name}
               </a>
@@ -63,7 +63,7 @@ const Header = () => {
               onClick={handleWhatsAppClick}
               className="bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide"
             >
-              Pide tu combo
+              PIDE TU COMBO
             </Button>
           </div>
 
@@ -85,7 +85,7 @@ const Header = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-foreground hover:text-primary transition-colors font-medium py-2"
+                  className={`${isScrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-colors font-medium py-2`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -98,7 +98,7 @@ const Header = () => {
                 }}
                 className="bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide w-full"
               >
-                Pide tu combo
+                PIDE TU COMBO
               </Button>
             </nav>
           </div>

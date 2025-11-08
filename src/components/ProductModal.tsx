@@ -17,16 +17,16 @@ interface ProductModalProps {
 
 const ProductModal = ({ item, isOpen, onClose }: ProductModalProps) => {
   const handleOrderClick = () => {
-    const phone = '573001234567'; // Replace with actual phone
+    const phone = '573217651856'; // Replace with actual phone
     const message = encodeURIComponent(
-      `¡Hola! Quiero pedir: ${item.name}. ¿Para recoger o domicilio?`
+      `¡Hola! Quiero PIDE: ${item.name}.`
     );
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden">
+      <DialogContent className="w-[95vw] max-w-2xl p-0 md:rounded-lg max-h-[85vh] overflow-y-auto">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -37,7 +37,7 @@ const ProductModal = ({ item, isOpen, onClose }: ProductModalProps) => {
         </button>
 
         {/* Image */}
-        <div className="relative h-64 md:h-80 bg-muted">
+        <div className="relative h-48 sm:h-56 md:h-72 lg:h-80 bg-muted">
           <img
             src={item.image || '/placeholder.svg'}
             alt={item.name}
@@ -76,7 +76,7 @@ const ProductModal = ({ item, isOpen, onClose }: ProductModalProps) => {
               onClick={handleOrderClick}
               className="flex-1 bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide h-12"
             >
-              Pedir ahora
+              PIDE AHORA
             </Button>
             <Button
               onClick={onClose}

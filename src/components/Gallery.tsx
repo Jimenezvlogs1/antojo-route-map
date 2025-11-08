@@ -1,3 +1,5 @@
+import { FaInstagram } from 'react-icons/fa';
+
 const Gallery = () => {
   const images = [
     { id: 1, alt: 'Perro caliente especial', category: 'Perros' },
@@ -38,8 +40,8 @@ const Gallery = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                  <span className="text-white font-bold text-sm uppercase text-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                  <span className="text-black font-bold text-sm uppercase text-center">
                     {image.category}
                   </span>
                 </div>
@@ -55,11 +57,13 @@ const Gallery = () => {
           </p>
           <div className="flex gap-4 justify-center">
             <a
-              href="#"
+              href="https://www.instagram.com/dond_eelgordo/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary hover:text-hover transition-colors font-bold"
-              aria-label="Instagram"
+              aria-label="Instagram @dond_eelgordo"
             >
-              📸 @dondeelgordo
+              <span className="inline-flex items-center gap-2"><FaInstagram className="h-4 w-4" /> @dond_eelgordo</span>
             </a>
             <a
               href="#"

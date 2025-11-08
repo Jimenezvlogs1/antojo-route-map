@@ -7,12 +7,12 @@ export interface MenuItem {
 }
 
 export const menuCategories = [
+  { id: 'hamburguesas', name: '🍔 HAMBURGUESAS', icon: '🍔' },
   { id: 'perros', name: '🌭 PERROS CALIENTES', icon: '🌭' },
   { id: 'salchipapas', name: '🍟 SALCHIPAPAS', icon: '🍟' },
   { id: 'desgranados', name: '🍚 DESGRANADOS', icon: '🍚' },
-  { id: 'hamburguesas', name: '🍔 HAMBURGUESAS', icon: '🍔' },
-  { id: 'patacones', name: '🍽️ PATACONES Y OTROS', icon: '🍽️' },
   { id: 'arepas', name: '🫓 AREPAS', icon: '🫓' },
+  { id: 'patacones', name: '🍽️ PATACONES Y OTROS', icon: '🍽️' },
 ];
 
 export const menuItems: MenuItem[] = [

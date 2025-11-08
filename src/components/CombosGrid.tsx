@@ -5,9 +5,9 @@ import { Flame } from 'lucide-react';
 
 const CombosGrid = () => {
   const handleComboClick = (comboName: string) => {
-    const phone = '573001234567'; // Replace with actual phone
+    const phone = '573217651856'; // Replace with actual phone
     const message = encodeURIComponent(
-      `¡Hola! Quiero pedir el ${comboName}. ¿Para recoger o domicilio?`
+      `¡Hola! Quiero PIDE el ${comboName}. ¿Para recoger o domicilio?`
     );
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
@@ -25,7 +25,7 @@ const CombosGrid = () => {
             COMBOS DEL <span className="text-primary">GORDO</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Armamos los mejores combos para que disfrutes más por menos. ¡Pide ahora!
+            Armamos los mejores combos para que disfrutes más por menos. ¡PIDE AHORA!
           </p>
         </div>
 
@@ -69,7 +69,7 @@ const CombosGrid = () => {
                   onClick={() => handleComboClick(combo.name)}
                   className="w-full bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide"
                 >
-                  Pide tu combo
+                  PIDE TU COMBO
                 </Button>
               </div>
             </Card>
@@ -83,7 +83,7 @@ const CombosGrid = () => {
           </p>
           <Button
             onClick={() => {
-              const phone = '573001234567';
+              const phone = '573217651856';
               const message = encodeURIComponent('Quiero armar un combo personalizado');
               window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
             }}

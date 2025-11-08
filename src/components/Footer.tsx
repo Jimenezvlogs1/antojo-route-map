@@ -1,3 +1,5 @@
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -10,9 +12,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', href: '#', icon: '📘' },
-    { name: 'Instagram', href: '#', icon: '📸' },
-    { name: 'WhatsApp', href: 'https://wa.me/573001234567', icon: '💬' },
+    { name: 'Facebook', href: '#', icon: <FaFacebookF className="h-5 w-5" /> },
+    { name: '@dond_eelgordo', href: 'https://www.instagram.com/dond_eelgordo/', icon: <FaInstagram className="h-5 w-5" /> },
+    { name: 'WhatsApp', href: 'https://wa.me/573217651856', icon: <FaWhatsapp className="h-5 w-5" /> },
   ];
 
   return (
@@ -37,9 +39,21 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="text-xl">{link.icon}</span>
+                  {link.icon}
                 </a>
               ))}
+            </div>
+            <div className="mt-3">
+              <a
+                href="https://www.instagram.com/dond_eelgordo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-primary transition-colors"
+                aria-label="Abrir Instagram @dond_eelgordo"
+              >
+                <FaInstagram className="h-5 w-5" />
+                <span>@dond_eelgordo</span>
+              </a>
             </div>
           </div>
 
@@ -70,13 +84,27 @@ const Footer = () => {
             <ul className="space-y-3 text-white/70">
               <li>
                 <strong className="text-white">Dirección:</strong><br />
-                Calle Principal #123<br />
-                Centro, Ciudad
+                <a
+                  href="https://maps.app.goo.gl/qabdqwHqfm5HNrMJ7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary underline underline-offset-4"
+                  aria-label="Abrir ubicación en Google Maps"
+                >
+                  CRA 9 bis # 1e48<br />
+                  Alfonso López, Pereira
+                </a>
               </li>
               <li>
                 <strong className="text-white">Teléfono:</strong><br />
-                <a href="tel:+573001234567" className="hover:text-primary transition-colors">
-                  +57 300 123 4567
+                <a
+                  href={`https://wa.me/573217651856?text=${encodeURIComponent('¡Hola! Quiero hacer un pedido.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                  aria-label="Escribir por WhatsApp"
+                >
+                  +57 321 7651856
                 </a>
               </li>
             </ul>
@@ -89,12 +117,16 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2 text-white/70">
               <li>
-                <strong className="text-white">Lunes - Viernes:</strong><br />
-                10:00 AM - 11:00 PM
+                <strong className="text-white">Miércoles a Lunes:</strong><br />
+                7:00 PM – 1:00 AM
               </li>
               <li>
-                <strong className="text-white">Sábado - Domingo:</strong><br />
-                10:00 AM - 12:00 AM
+                <strong className="text-white">Fin de semana (Festivos):</strong><br />
+                7:00 PM – 2:00 AM
+              </li>
+              <li>
+                <strong className="text-white">Martes:</strong><br />
+                Cerrado
               </li>
             </ul>
           </div>
@@ -106,7 +138,7 @@ const Footer = () => {
             © {currentYear} DONDE EL GORDO. Todos los derechos reservados.
           </p>
           <p className="mt-2 text-sm">
-            Hecho con 🔥 y mucho sabor
+            Hecho con amor y mucho sabor
           </p>
         </div>
       </div>
@@ -125,25 +157,26 @@ const Footer = () => {
             priceRange: '$$',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Calle Principal #123',
-              addressLocality: 'Ciudad',
+              streetAddress: 'CRA 9 bis # 1e48',
+              addressLocality: 'Pereira',
               addressCountry: 'CO',
             },
-            telephone: '+573001234567',
+            telephone: '+573217651856',
             openingHoursSpecification: [
               {
                 '@type': 'OpeningHoursSpecification',
-                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                opens: '10:00',
-                closes: '23:00',
+                dayOfWeek: ['Monday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '19:00',
+                closes: '01:00',
               },
               {
                 '@type': 'OpeningHoursSpecification',
                 dayOfWeek: ['Saturday', 'Sunday'],
-                opens: '10:00',
-                closes: '00:00',
+                opens: '19:00',
+                closes: '02:00',
               },
             ],
+            hasMap: 'https://maps.app.goo.gl/qabdqwHqfm5HNrMJ7',
             menu: 'https://example.com/#menu',
           }),
         }}
