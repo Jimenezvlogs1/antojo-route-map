@@ -70,16 +70,16 @@ const Hero = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20 relative z-10">
               <div>
-                <div className="text-3xl font-display text-primary">100+</div>
-                <div className="text-sm text-white font-display font-semibold uppercase tracking-wide">PRODUCTOS</div>
+                <div className="text-3xl font-display text-primary/90">100+</div>
+                <div className="text-sm text-white/70 font-display font-medium uppercase tracking-wide">PRODUCTOS</div>
               </div>
               <div>
-                <div className="text-3xl font-display text-primary">5★</div>
-                <div className="text-sm text-white font-display font-semibold uppercase tracking-wide">CALIFICACIÓN</div>
+                <div className="text-3xl font-display text-primary/90">5★</div>
+                <div className="text-sm text-white/70 font-display font-medium uppercase tracking-wide">CALIFICACIÓN</div>
               </div>
               <div>
-                <div className="text-3xl font-display text-primary">6/6</div>
-                <div className="text-sm text-white font-display font-semibold uppercase tracking-wide">DISPONIBLES</div>
+                <div className="text-3xl font-display text-primary/90">6/6</div>
+                <div className="text-sm text-white/70 font-display font-medium uppercase tracking-wide">DISPONIBLES</div>
               </div>
             </div>
           </div>
