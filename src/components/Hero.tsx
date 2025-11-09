@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 const Hero = () => {
   const handleWhatsAppClick = () => {
     const phone = '573217651856';
-    const message = encodeURIComponent('¡Hola! Quiero hacer un pedido');
+    const message = encodeURIComponent('¡Hola! Quiero hacer un pedido.');
     const urls = [
       `https://wa.me/${phone}?text=${message}`,
       `https://api.whatsapp.com/send?phone=${phone}&text=${message}`,
@@ -68,18 +68,18 @@ const Hero = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20">
+            <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20 relative z-10">
               <div>
                 <div className="text-3xl font-display text-primary">100+</div>
-                <div className="text-sm text-black uppercase">Productos</div>
+                <div className="text-sm text-white font-display font-semibold uppercase tracking-wide">PRODUCTOS</div>
               </div>
               <div>
                 <div className="text-3xl font-display text-primary">5★</div>
-                <div className="text-sm text-black/70 uppercase">Calificación</div>
+                <div className="text-sm text-white font-display font-semibold uppercase tracking-wide">CALIFICACIÓN</div>
               </div>
               <div>
                 <div className="text-3xl font-display text-primary">6/6</div>
-                <div className="text-sm text-black/70 uppercase">Disponibles</div>
+                <div className="text-sm text-white font-display font-semibold uppercase tracking-wide">DISPONIBLES</div>
               </div>
             </div>
           </div>
@@ -89,13 +89,13 @@ const Hero = () => {
             <div className="relative aspect-square lg:aspect-auto lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent/30 mix-blend-overlay"></div>
               <img
-                src="/placeholder.svg"
+                src="https://replicate.delivery/xezq/6Z0Ev7BAXGY5L1Bz0d9CvFtyUJLQGg7cONtnwf59TNeYLYnVA/tmp0q4lkll8.webp"
                 alt="Perro caliente especial DONDE EL GORDO"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h3 className="font-display text-2xl text-black">PERRO ESPECIAL</h3>
-                <p className="text-black/80">¡El favorito de nuestros clientes!</p>
+                <h3 className="font-display text-2xl text-white">PERRO ESPECIAL</h3>
+                <p className="text-white/90">¡El favorito de nuestros clientes!</p>
               </div>
             </div>
             
@@ -110,11 +110,18 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Fondo burdeos detrás de estadísticas (full-bleed) */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1]">
+        <div className="h-40 md:h-56 bg-secondary">
+          <div className="h-full w-full bg-gradient-to-br from-primary/20 to-accent/10"></div>
+        </div>
+      </div>
+
       {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-background">
-        <svg viewBox="0 0 1440 120" className="absolute top-0 w-full h-full">
+      <div className="absolute bottom-0 left-0 right-0 h-24 md:h-40 bg-secondary">
+        <svg viewBox="0 0 1440 120" className="absolute top-0 w-full h-full text-secondary">
           <path
-            fill="hsl(var(--secondary))"
+            fill="currentColor"
             d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
           ></path>
         </svg>

@@ -62,7 +62,7 @@ const CombosGrid = () => {
                 </h3>
                 <p className="text-muted-foreground mb-3">{combo.description}</p>
                 <p className="text-sm font-medium mb-4 text-foreground/70">
-                  📦 {combo.items}
+                  {combo.items}
                 </p>
                 
                 <Button
