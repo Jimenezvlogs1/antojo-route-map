@@ -25,7 +25,8 @@ const CombosGrid = () => {
             COMBOS DEL <span className="text-primary">GORDO</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Armamos los mejores combos para que disfrutes más por menos. ¡PIDE AHORA!
+            Armamos los mejores combos para que disfrutes más por menos.
+            <span className="block text-center font-semibold">¡PIDE AHORA!</span>
           </p>
         </div>
 

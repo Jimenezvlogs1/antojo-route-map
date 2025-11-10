@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
     {
       icon: <Award className="w-12 h-12 text-accent" />,
       title: 'Calidad Garantizada',
-      description: 'Más de 10 años sirviendo la mejor comida callejera de la ciudad',
+      description: 'Más de 22 años de sabor y tradición.',
     },
   ];
 
@@ -67,8 +67,8 @@ const WhyChooseUs = () => {
               🔥 INGREDIENTES FRESCOS, SABOR EXPLOSIVO 🔥
             </p>
             <p className="text-muted-foreground">
-              Cada ingrediente es seleccionado cuidadosamente para garantizar el mejor sabor en cada bocado.
-              No usamos productos congelados ni procesados - todo es fresco y preparado con amor.
+              Cada ingrediente es seleccionado cuidadosamente para garantizar el mejor sabor.
+              <span className="block text-center"> todo es fresco y preparado con amor.</span>
             </p>
           </div>
         </div>

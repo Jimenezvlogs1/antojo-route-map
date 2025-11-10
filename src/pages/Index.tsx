@@ -3,7 +3,6 @@ import Hero from '@/components/Hero';
 import CombosGrid from '@/components/CombosGrid';
 import MenuSection from '@/components/MenuSection';
 import Gallery from '@/components/Gallery';
-import Testimonials from '@/components/Testimonials';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -18,7 +17,6 @@ const Index = () => {
       <MenuSection />
       <WhyChooseUs />
       <Gallery />
-      <Testimonials />
       <ContactForm />
       <Footer />
       <WhatsAppButton />

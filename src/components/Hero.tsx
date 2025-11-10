@@ -44,7 +44,7 @@ const Hero = () => {
             </div>
             
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-xl">
-              Sabor auténtico, porciones generosas y la mejor sazón callejera de la ciudad. 
+              Sabor auténtico, porciones generosas y la mejor sazón callejera. 
               ¡Cada bocado es una experiencia!
             </p>
 
