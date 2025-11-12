@@ -38,6 +38,9 @@ const ProductCard = ({ item, index }: ProductCardProps) => {
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute top-1 right-1 bg-primary text-primary-foreground px-3 py-2 rounded-full font-display text-xl shadow-lg">
+            {item.price ?? 'N/A'}
+          </div>
         </div>
 
         {/* Content */}
@@ -45,10 +48,9 @@ const ProductCard = ({ item, index }: ProductCardProps) => {
           <h3 className="font-display text-lg uppercase mb-2 group-hover:text-primary transition-colors line-clamp-1">
             {item.name}
           </h3>
-          <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+          <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
             {item.description}
           </p>
-
           {/* Actions */}
           <div className="flex gap-2">
             <Button

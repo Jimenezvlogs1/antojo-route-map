@@ -44,6 +44,11 @@ const ProductModal = ({ item, isOpen, onClose }: ProductModalProps) => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          {item.price && (
+            <div className="absolute top-3 left-3 bg-primary text-primary-foreground px-3 py-2 rounded-full font-display text-xl shadow-lg">
+              {item.price}
+            </div>
+          )}
         </div>
 
         {/* Content */}
