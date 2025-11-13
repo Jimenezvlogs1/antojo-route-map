@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -16,12 +17,47 @@ interface ProductModalProps {
 }
 
 const ProductModal = ({ item, isOpen, onClose }: ProductModalProps) => {
+  const goToMenu = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    onClose();
+    setTimeout(() => {
+      const el = document.querySelector('#menu');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else window.location.hash = '#menu';
+    }, 60);
+  };
+  const [qty, setQty] = useState<number>(1);
+  const [added, setAdded] = useState<boolean>(false);
+
   const handleOrderClick = () => {
-    const phone = '573217651856'; // Replace with actual phone
-    const message = encodeURIComponent(
-      `¡Hola! Quiero PIDE: ${item.name}.`
-    );
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    if (canAddToCart) {
+      const addEvent = new CustomEvent('cart:add', {
+        detail: {
+          id: item.id,
+          name: item.name,
+          unitPriceDisplay: item.price as string,
+          qty,
+        },
+      });
+      window.dispatchEvent(addEvent);
+    }
+    window.dispatchEvent(new Event('cart:open'));
+    onClose();
+  };
+
+  const canAddToCart = !!item.price && item.price !== 'N/A';
+  const handleAddToCart = () => {
+    if (!canAddToCart) return;
+    const event = new CustomEvent('cart:add', {
+      detail: {
+        id: item.id,
+        name: item.name,
+        unitPriceDisplay: item.price as string,
+        qty,
+      },
+    });
+    window.dispatchEvent(event);
+    setAdded(true);
   };
 
   return (
@@ -68,28 +104,62 @@ const ProductModal = ({ item, isOpen, onClose }: ProductModalProps) => {
               <p className="text-sm text-muted-foreground">{item.description}</p>
             </div>
 
-            <div className="bg-primary/5 p-4 rounded-lg border-2 border-primary/20">
-              <p className="text-sm">
-                ⚡ <strong>Preparación fresca:</strong> Todos nuestros productos se preparan 
-                al momento con ingredientes de primera calidad.
-              </p>
-            </div>
+            {added ? (
+              <div className="bg-rose-50 p-4 rounded-lg border border-rose-200">
+                <p className="text-sm text-foreground">
+                  ⚡ <strong>Agregado al carrito:</strong> Tu artículo fue añadido correctamente. 
+                  <a href="#menu" onClick={goToMenu} className="ml-1 text-rose-700 hover:text-rose-800 underline">¿Agregar algo más?</a>
+                </p>
+              </div>
+            ) : (
+              <div className="bg-primary/5 p-4 rounded-lg border-2 border-primary/20">
+                <p className="text-sm">
+                  ⚡ <strong>Preparación fresca:</strong> Todos nuestros productos se preparan 
+                  al momento con ingredientes de primera calidad.
+                </p>
+              </div>
+            )}
           </div>
 
-          <div className="mt-6 flex gap-3">
-            <Button
-              onClick={handleOrderClick}
-              className="flex-1 bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide h-12"
-            >
-              PIDE AHORA
-            </Button>
-            <Button
-              onClick={onClose}
-              variant="outline"
-              className="border-2 border-border hover:border-primary hover:text-primary font-bold uppercase h-12"
-            >
-              Cerrar
-            </Button>
+          <div className="mt-6 flex flex-col gap-3">
+            <div className="flex items-center gap-3">
+              <label className="text-sm font-medium">Cantidad</label>
+              <select
+                className="border rounded px-2 py-1"
+                value={qty}
+                onChange={(e) => setQty(Number(e.target.value))}
+              >
+                {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
+                  <option key={n} value={n}>{n}</option>
+                ))}
+              </select>
+              <Button
+                onClick={handleAddToCart}
+                disabled={!canAddToCart}
+                className="bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide"
+              >
+                Agregar al carrito
+              </Button>
+              {!canAddToCart && (
+                <span className="text-xs text-muted-foreground">Precio N/A: no disponible para carrito.</span>
+              )}
+            </div>
+
+            <div className="flex gap-3">
+              <Button
+                onClick={handleOrderClick}
+                className="flex-1 bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide h-12"
+              >
+                PIDE AHORA
+              </Button>
+              <Button
+                onClick={onClose}
+                variant="outline"
+                className="border-2 border-border hover:border-primary hover:text-primary font-bold uppercase h-12"
+              >
+                Cerrar
+              </Button>
+            </div>
           </div>
         </div>
       </DialogContent>

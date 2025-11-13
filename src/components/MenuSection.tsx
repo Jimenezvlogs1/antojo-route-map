@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 import { Button } from '@/components/ui/button';
 
 const MenuSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState('perros');
+  const [selectedCategory, setSelectedCategory] = useState('hamburguesas');
 
   const filteredItems = menuItems.filter(item => item.category === selectedCategory);
 

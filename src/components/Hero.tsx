@@ -99,13 +99,6 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Floating Badge */}
-            <div className="absolute -top-4 -right-4 bg-accent text-white rounded-full w-24 h-24 flex items-center justify-center shadow-lg animate-pulse">
-              <div className="text-center">
-                <div className="text-2xl font-display">HOY</div>
-                <div className="text-xs">OFERTAS</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

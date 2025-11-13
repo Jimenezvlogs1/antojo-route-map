@@ -35,7 +35,7 @@ const CombosGrid = () => {
           {combos.map((combo, index) => (
             <Card
               key={combo.id}
-              className="overflow-hidden group hover:shadow-xl transition-all duration-300 animate-fade-up border-2 hover:border-primary"
+              className="h-full flex flex-col overflow-hidden group hover:shadow-xl transition-all duration-300 animate-fade-up border-2 hover:border-primary"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image */}
@@ -57,7 +57,7 @@ const CombosGrid = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-display text-2xl uppercase mb-2 group-hover:text-primary transition-colors">
                   {combo.name}
                 </h3>
@@ -68,7 +68,7 @@ const CombosGrid = () => {
                 
                 <Button
                   onClick={() => handleComboClick(combo.name)}
-                  className="w-full bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide"
+                  className="mt-auto w-full bg-primary text-primary-foreground hover:bg-hover font-bold uppercase tracking-wide"
                 >
                   PIDE TU COMBO
                 </Button>
@@ -77,24 +77,6 @@ const CombosGrid = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            ¿No ves lo que buscas? Escríbenos y armamos tu combo personalizado
-          </p>
-          <Button
-            onClick={() => {
-              const phone = '573217651856';
-              const message = encodeURIComponent('Quiero armar un combo personalizado');
-              window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-            }}
-            variant="outline"
-            size="lg"
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold uppercase"
-          >
-            Personaliza tu combo
-          </Button>
-        </div>
       </div>
     </section>
   );

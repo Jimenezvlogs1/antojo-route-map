@@ -13,11 +13,21 @@ const ProductCard = ({ item, index }: ProductCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOrderClick = () => {
-    const phone = '573217651856'; // Replace with actual phone
-    const message = encodeURIComponent(
-      `¡Hola! Quiero PIDE: ${item.name}.`
-    );
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    const canAddToCart = !!item.price && item.price !== 'N/A';
+    if (canAddToCart) {
+      const addEvent = new CustomEvent('cart:add', {
+        detail: {
+          id: item.id,
+          name: item.name,
+          unitPriceDisplay: item.price as string,
+          qty: 1,
+        },
+      });
+      window.dispatchEvent(addEvent);
+      window.dispatchEvent(new Event('cart:open'));
+    } else {
+      setIsModalOpen(true);
+    }
   };
 
   return (
